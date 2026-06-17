@@ -514,6 +514,41 @@
             .slider-container { width: 92%; }
             .slide-card { width: 290px; height: 190px; }
         }
+        @media (max-width: 968px) {
+            header {
+                flex-wrap: wrap; 
+                padding: 20px 5%;
+                gap: 20px;
+            }
+
+            nav {
+                display: block; /* Aseguramos que sea visible */
+                width: 100%; 
+                order: 3;    /* Lo manda abajo del logo y botón contratar */
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                padding-top: 15px;
+            }
+
+            nav ul {
+                justify-content: space-around; 
+                gap: 10px;
+            }
+
+            nav ul li a, 
+            nav ul li button {
+                font-size: 0.8rem;
+            }
+
+            .contact-dropdown-card {
+                top: 130px; /* Ajustado para el header más alto en móvil */
+            }
+
+            .hero { 
+                flex-direction: column-reverse; 
+                padding: 40px 5%; 
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
