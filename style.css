@@ -458,7 +458,15 @@
         .sub-text { font-size: 0.9rem; color: var(--text-muted); }
         .sub-text a { color: var(--cyan-accent); text-decoration: none; }
 
+        footer{
+        background:#29005000;
+        color:rgb(60, 193, 255);
+        text-align:center;
+        padding:10px;
+        } 
+
         @media (max-width: 968px) {
+
             header {
                 flex-wrap: wrap; 
                 padding: 20px 5%;
@@ -491,5 +499,9 @@
                 flex-direction: column-reverse; 
                 padding: 40px 5%; 
                 text-align: center;
+            }
+
+            .hero h1{
+                font-size: 2.0rem;
             }
         }

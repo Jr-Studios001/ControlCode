@@ -192,7 +192,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 0 80px 0;
+            padding: 20px 0 80px 0;
             gap: 60px;
             width: 100%;
             position: relative;
@@ -210,7 +210,7 @@
         .showcase-title {
             text-align: center;
             font-size: 1.5rem;
-            color: var(--cyan-accent);
+            color: #4facfe;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 800;
@@ -503,16 +503,24 @@
             box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
+        footer{
+        background:#29005000;
+        color:rgb(60, 193, 255);
+        text-align:center;
+        padding:10px;
+        } 
+
         /* --- RESPONSIVE DESIGN COMPLETAMENTE CONTROLADO --- */
         @media (max-width: 968px) {
             nav { display: none; }
             .content-row { flex-direction: column; padding: 0 5%; gap: 40px; }
             .hero-right { text-align: center; }
-            .hero-right h1 { font-size: 2.3rem; }
-            .hero-right p { margin: 0 auto 30px auto; }
+            .hero-right h1 { font-size: 1.5rem; }
+            .hero-right p { margin: 0 auto 30px auto; font-size: 0.9rem}
             .hero-left { max-width: 100%; }
             .slider-container { width: 92%; }
             .slide-card { width: 290px; height: 190px; }
+            .showcase-title { padding: -12%; font-size: 1.0rem;}
         }
         @media (max-width: 968px) {
             header {
@@ -554,7 +562,7 @@
 <body>
 
     <header>
-        <div class="logo">LOGIC<span>SOFT</span></div>
+        <div class="logo">CONTROL<span>CODE</span></div>
         <nav>
             <ul>
                 <li><a href="../views/services.html">Servicios</a></li>
@@ -587,25 +595,25 @@
         <div class="bg-circle-container"></div>
 
         <section class="showcase-section" id="projects">
-            <h2 class="showcase-title">Galería de Proyectos</h2>
+            <h2 class="showcase-title">Algunos de nuestros Proyectos</h2>
             
             <div class="slider-wrapper">
                 <div class="slider-container" id="sliderContainer">
                     <div class="slider-track" id="sliderTrack">
                         <div class="slide-card" onclick="openModal(this)">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600" alt="Automatización de Procesos">
+                            <img src="../assets/creaciones_jr_sport.png" alt="Automatización de Procesos">
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600" alt="Sistemas Inteligentes">
+                            <img src="../assets/app_pc.png" alt="Sistemas Inteligentes">
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="Dashboards de Control">
+                            <img src="../assets/logicsoftware.png" alt="Dashboards de Control">
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600" alt="Aplicaciones Web">
+                            <img src="../assets/fundacion_web.png" alt="Aplicaciones Web">
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600" alt="Soluciones Móviles">
+                            <img src="../assets/ls.png" alt="Soluciones Móviles">
                         </div>
                     </div>
                 </div>
@@ -645,7 +653,10 @@
             <img class="modal-content" id="modalImg" src="" alt="Vista ampliada">
         </div>
     </div>
-
+    
+    <footer>
+        <p>© 2026 Creaciones ControlCode • Todos los derechos reservados • Desarrollando el Futuro</p>
+    </footer>
 <script>
         // --- 🛠️ LÓGICA DE LA TARJETA DESPLEGABLE DE CONTACTO ---
         const contactBtn = document.getElementById('contactBtn');

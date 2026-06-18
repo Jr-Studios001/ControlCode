@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logicsoft - Explorar Proyectos</title>
     <link rel="icon" type="image/png" href="../favicon.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mobile_hand_left" />
+    
+
+    
     <style>
         /* --- PALETA DE COLORES Y VARIABLES --- */
         :root {
@@ -212,7 +217,7 @@
         .showcase-title {
             text-align: center;
             font-size: 1.5rem;
-            color: var(--cyan-accent);
+            color: #4facfe;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 800;
@@ -244,10 +249,10 @@
         /* Tarjeta de imagen responsiva */
         .slide-card {
             width: 420px; 
-            height: 260px;
+            height: 430px;
             background: var(--bg-card);
             border-radius: 16px;
-            border: 1px solid rgba(122, 34, 255, 0.3);
+            border: 1px solid rgb(122, 34, 255);
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -262,8 +267,9 @@
         }
 
         .slide-card img {
-            width: 100%;
+            width: 30%;
             height: 100%;
+            scale: 100%;
             object-fit: cover;
             opacity: 0.85;
             transition: opacity 0.3s;
@@ -509,13 +515,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             color: #ffffff;
+            
         }
 
         /* Título Principal */
         .info_service h2 {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 16px; /* Separación con el subtítulo */
+            margin-bottom: 16%; /* Separación con el subtítulo */
             letter-spacing: 0.5px;
         }
 
@@ -528,16 +535,39 @@
             max-width: 90%; /* Evita que el texto toque los bordes laterales */
             margin: 0 auto;
         }
+
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        
+        }
+        .material-symbols-outlined {
+            font-size: 70px;
+        }
+
+        footer{
+        background:#29005000;
+        color:rgb(60, 193, 255);
+        text-align:center;
+        padding:10px;
+        } 
+
         /* --- RESPONSIVE DESIGN COMPLETAMENTE CONTROLADO --- */
         @media (max-width: 968px) {
             nav { display: none; }
             .content-row { flex-direction: column; padding: 0 5%; gap: 40px; }
             .hero-right { text-align: center; }
-            .hero-right h1 { font-size: 2.3rem; }
+            .hero-right h2 { font-size: 1.3rem; }
             .hero-right p { margin: 0 auto 30px auto; }
             .hero-left { max-width: 100%; }
             .slider-container { width: 92%; }
-            .slide-card { width: 290px; height: 190px; }
+            .slide-card { width: 290px; height: 430px; }
+            .info_service h2 {padding: 5%; font-size: 1.7rem; padding-bottom: 1px;}
+            .info_service p {padding: 5%; font-size: 1.0rem; padding-bottom: 1px;}
+            .showcase-title { font-size: 1.0rem;}
         }
         @media (max-width: 968px) {
             header {
@@ -572,6 +602,8 @@
                 flex-direction: column-reverse; 
                 padding: 40px 5%; 
                 text-align: center;
+                
+
             }
         }
     </style>
@@ -579,7 +611,7 @@
 <body>
 
     <header>
-        <div class="logo">LOGIC<span>SOFT</span></div>
+        <div class="logo">CONTROL<span>CODE</span></div>
         <nav>
             <ul>
                 <li><a href="../views/services.html">Servicios</a></li>
@@ -623,6 +655,7 @@
                                 <p>Diseñamos y construimos sitios web a la medida, optimizados para posicionar tu marca, atraer clientes y potenciar tus ventas.
                                     Nuestras Webs se caracterizan por ser  modernas, rápidas y adaptables a cualquier dispositivo. Llevamos tu negocio al entorno digital.
                                 </p>
+                                <img  src="../assets/icon_web.svg" alt="">
                             </div>
 
                         </div>
@@ -632,23 +665,26 @@
                                 <h2>Desarrollo de Aplicaciones Móviles</h2>
                                 <p>Diseñamos y programamos aplicaciones móviles intuitivas, fluidas y optimizadas para Android e iOS, llevando tus servicios directamente al bolsillo de tus usuarios.
                                 </p>
+                                <img  src="../assets/icon_mobile.svg" alt="">
                             </div>
                         </div>
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
                         <div class="slide-card" onclick="openModal(this)">
                             <div class="info_service">
-                                <h2>Automatización y Bots de WhatsApp</h2>
+                                <h2>Automatización de mensajeria para WhatsApp</h2>
                                 <p>Desarrollamos bots inteligentes integrados con plataformas web para automatizar tus ventas, responder consultas en tiempo real y optimizar la atención a tus clientes 24/7.
                                 </p>
+                                <img  src="../assets/icon_message.svg" alt="">
                             </div>
-                        </div>
+                        </div>  
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
                             <div class="info_service">
-                                <h2>Software de Escritorio y Sistemas a la Medida</h2>
+                                <h2>Software de Escritorio</h2>
                                 <p>Creamos aplicaciones de escritorio potentes y seguras, conectadas a servidores de alto rendimiento y bases de datos robustas para gestionar tu negocio sin límites.
                                 </p>
+                                <img  src="../assets/icon_pc.svg" alt="">
                             </div>
                         </div>
                         <div class="slide-card" onclick="openModal(this)">
@@ -656,6 +692,17 @@
                                 <h2>Desarrollo de Videojuegos</h2>
                                 <p>Creamos experiencias interactivas y videojuegos en 2D. Ideal para proyectos independientes, herramientas educativas o estrategias de gamificación para marcas.
                                 </p>
+                                <img  src="../assets/icon_videogame.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-card" onclick="openModal(this)">
+                            <div class="info_service">
+                                <h2>Marketing</h2>
+                                <p>🚀 Impulsa tu marca y alcanza más clientes
+                                </p>
+                                <p>Creamos estrategias de marketing diseñadas para aumentar tu visibilidad, atraer clientes potenciales y fortalecer la presencia de tu negocio en el mercado y un crecimiento sostenible para tu empresa.
+                                </p>
+                                <img  src="../assets/icon_marketing.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -672,6 +719,9 @@
         </div>
     </div>
 
+    <footer>
+        <p>© 2026 Creaciones ControlCode • Todos los derechos reservados • Desarrollando el Futuro</p>
+    </footer>
 <script>
         // --- 🛠️ LÓGICA DE LA TARJETA DESPLEGABLE DE CONTACTO ---
         const contactBtn = document.getElementById('contactBtn');
