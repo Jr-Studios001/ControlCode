@@ -1,32 +1,14 @@
-const codeLines = [
-    '<span class="code-keyword">const</span> <span class="code-class">Project</span> = {',
-    '  status: <span class="code-string">"Ready to Build"</span>,',
-    '  speed: <span class="code-string">"High Performance"</span>,',
-    '  design: <span class="code-string">"Modern & Clean"</span>',
-    '};',
-    '',
-    '<span class="code-keyword">function</span> <span class="code-class">initChat</span>() {',
-    '  window.open(<span class="code-string">"WhatsApp_API"</span>);',
-    '}'
-];
-
-const typingContainer = document.getElementById('typing-text');
 const fileNameElement = document.getElementById('terminal-filename');
 
 const viewCode = document.getElementById('view-code');
 const viewWeb = document.getElementById('view-web');
 const viewPhone = document.getElementById('view-phone');
+const viewPhoto2 = document.getElementById('view-photo2');
 
-let lineIndex = 0;
-
-function printCode() {
-    if (lineIndex < codeLines.length) {
-        typingContainer.innerHTML += codeLines[lineIndex] + '<br>';
-        lineIndex++;
-        setTimeout(printCode, 350);
-    } else {
-        setTimeout(showWebView, 3000);
-    }
+// En lugar de escribir el código línea por línea, ahora solo controlamos el tiempo de espera
+function startAnimation() {
+    // Muestra la foto durante 3.5 segundos antes de pasar a la web-view
+    setTimeout(showWebView, 3500); 
 }
 
 function showWebView() {
@@ -36,35 +18,47 @@ function showWebView() {
         fileNameElement.textContent = "live-preview: e-commerce";
         viewWeb.classList.add('active');
         viewWeb.style.opacity = '1';
+        setTimeout(showPhoto2View, 4000);
+    }, 600);
+}
+
+function showPhoto2View() { 
+    viewWeb.style.opacity = '0';
+    setTimeout(() => {
+        viewPhone.classList.remove('active');
+        fileNameElement.textContent = "live-preview: dashboard"; 
+        viewPhoto2.classList.add('active');
+        viewPhoto2.style.opacity = '1';
         setTimeout(showPhoneView, 4000);
     }, 600);
 }
 
 function showPhoneView() {
-    viewWeb.style.opacity = '0';
+    viewPhoto2.style.opacity = '0';
     setTimeout(() => {
         viewWeb.classList.remove('active');
         fileNameElement.textContent = "live-preview: mobile-app";
         viewPhone.classList.add('active');
         viewPhone.style.opacity = '1';
-        setTimeout(resetToCode, 4000);
+        setTimeout(resetToCode, 4000); 
     }, 600);
 }
+
+
 
 function resetToCode() {
-    viewPhone.style.opacity = '0';
+    viewPhone.style.opacity = '0'; 
     setTimeout(() => {
-        viewPhone.classList.remove('active');
-        fileNameElement.textContent = "C.Code-engine.js";
-        typingContainer.innerHTML = '';
-        lineIndex = 0;
+        viewPhoto2.classList.remove('active');
+        fileNameElement.textContent = "preview-web.com"; 
         viewCode.classList.add('active');
         viewCode.style.opacity = '1';
-        printCode();
+        startAnimation();
     }, 600);
 }
 
-window.onload = printCode;
+// Inicializamos la animación al cargar la página
+window.onload = startAnimation;
 
 // --- 🛠️ TARJETA DE CONTACTO ---
 const contactBtn = document.getElementById('contactBtn');
